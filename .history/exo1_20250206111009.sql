@@ -110,8 +110,8 @@ DROP USER 'admin'@'localhost';
 
 
 CREATE USER 'jean-pierre'@'localhost' IDENTIFIED BY 'test'; 
-GRANT CREATE, SELECT ON bdd06012015.* TO 'jean-pierre'@'localhost';
+GRANT CREATE, SELECT ON * bdd06012015. * TO 'jean-pierre'@'localhost';
 
 
 CREATE USER 'admin'@'localhost' IDENTIFIED BY 'test'; 
-GRANT ALL PRIVILEGES ON bdd06012015.* TO 'admin'@'localhost';
+GRANT ALL PRIVILEGES ON * bdd06012015. * TO 'admin'@'localhost';
