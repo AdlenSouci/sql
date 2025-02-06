@@ -78,10 +78,9 @@ select * from eleves
 JOIN notes ON eleves.id = notes.matiere
 group by eleves.id;
 
-SELECT nom, prenom, date_naissance
-FROM eleves
-WHERE YEAR(CURDATE()) - YEAR(date_naissance) > 20;
-
+SELECT COUNT(*) 
+FROM eleves 
+WHERE ages > 20;
 
 --afficher la moyenne des notes par matiere
 

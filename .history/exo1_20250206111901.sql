@@ -23,19 +23,18 @@ create table notes (
 -- --cree 10 eleves differents 
 
 
-INSERT INTO eleves (nom, prenom, tel, id, date_naissance)
+INSERT INTO eleves (nom, prenom, tel, id, ages)
 VALUES
-('Dupont', 'Pierre', '123456789', 'E001', '2012-06-15'),
-('Martin', 'Julie', '987654321', 'E002', '2008-03-22'),
-('Durand', 'Thomas', '555555555', 'E003', '2005-11-10'),
-('Lefebvre', 'Sophie', '444444444', 'E004', '2013-08-05'),
-('Garcia', 'Lucas', '333333333', 'E005', '2009-09-18'),
-('Roux', 'Anaïs', '222222222', 'E006', '2007-12-30'),
-('Leclerc', 'Benoît', '111111111', 'E007', '2010-05-25'),
-('Moreau', 'Léa', '999999999', 'E008', '2006-07-14'),
-('Fournier', 'Alexandre', '888888888', 'E009', '2014-02-28'),
-('Bertrand', 'Charlotte', '777777777', 'E010', '2004-01-12');
-
+('Dupont', 'Pierre', 123456789, 'E001', 12),
+('Martin', 'Julie', 987654321, 'E002', 15),
+('Durand', 'Thomas', 555555555, 'E003', 18),
+('Lefebvre', 'Sophie', 444444444, 'E004', 11),
+('Garcia', 'Lucas', 333333333, 'E005', 14),
+('Roux', 'Anaïs', 222222222, 'E006', 16),
+('Leclerc', 'Benoît', 111111111, 'E007', 13),
+('Moreau', 'Léa', 999999999, 'E008', 17),
+('Fournier', 'Alexandre', 888888888, 'E009', 10),
+('Bertrand', 'Charlotte', 777777777, 'E010', 19);
 
 -- --insertions des données dans la table avec 30 notes par differentes matieres
 INSERT INTO notes (id_eleve, matiere, notes)
@@ -78,10 +77,9 @@ select * from eleves
 JOIN notes ON eleves.id = notes.matiere
 group by eleves.id;
 
-SELECT nom, prenom, date_naissance
-FROM eleves
-WHERE YEAR(CURDATE()) - YEAR(date_naissance) > 20;
-
+SELECT COUNT(*) 
+FROM eleves 
+WHERE ages > 20;
 
 --afficher la moyenne des notes par matiere
 
