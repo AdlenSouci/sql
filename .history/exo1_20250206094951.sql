@@ -1,0 +1,1 @@
+MariaDB [(none)]> SOURCE exo1.sql;
